@@ -1,0 +1,33 @@
+﻿@model HomeViewModel
+
+<h1>Именинники</h1>
+<div class="row mt-5 mb-2">
+    @{
+        foreach (var person in Model.bdNow)
+        {
+            <div class="col-lg-4">
+                <img class="img-thumbnail" src="@person.img" alt="@person.name" />
+                <h2>@person.name</h2>
+                <p>День рождения: @person.date.ToString("D")</p>
+            </div>
+        }
+        if (Model.bdNow?.Any() != true)
+        {
+            <h2>Сегодня нет именинников</h2>
+        }
+    }
+</div>
+<label></label>
+<h1>Ближайшие дни рождения</h1>
+<div class="row mt-5 mb-2">
+    @{
+        foreach (var person in Model.bdSoon)
+        {
+            <div class="col-lg-4">
+                <img class="img-thumbnail" src="@person.img" alt="@person.name" />
+                <h2>@person.name</h2>
+                <p>День рождения: @person.date.ToString("D")</p>
+            </div>
+        }
+    }
+</div>

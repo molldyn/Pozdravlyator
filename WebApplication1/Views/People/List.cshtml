@@ -1,0 +1,17 @@
+﻿
+<a class="nav-link" href="/People/List/Друзья">Друзья</a>
+<a class="nav-link" href="/People/List/Знакомые">Знакомые</a>
+<a class="nav-link" href="/People/List/Сотрудники">Сотрудники</a>
+
+<div class="row mt-5 mb-2">
+    @{
+        foreach (var person in Model.allPeople)
+        {
+            <div class="col-lg-4">
+                <img class="img-thumbnail" src="@person.img" alt="@person.name" />
+                <h2>@person.name</h2>
+                <p>День рождения: @person.date.ToString("D")</p>
+            </div>
+        }
+    }
+</div>
